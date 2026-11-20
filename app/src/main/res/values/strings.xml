@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Lab Practicals</string>
+    <string name="made_by">Made by Yogesh</string>
+
+    <!-- Practical 3 -->
+    <string name="practical3_title">Practical 3 – Simple Calculator</string>
+
+    <!-- Practical 4 -->
+    <string name="practical4_title">Practical 4 – Menus and Navigation</string>
+
+    <!-- Practical 5 -->
+    <string name="practical5_title">Practical 5 – Internal Storage</string>
+
+    <!-- Practical 6 -->
+    <string name="practical6_title">Practical 6 – SQLite To-Do List</string>
+
+    <!-- Practical 7 -->
+    <string name="practical7_title">Practical 7 – Internet and Email</string>
+
+    <!-- Practical 8 -->
+    <string name="practical8_title">Practical 8 – Graphics and Animations</string>
+
+    <!-- Practical 9 -->
+    <string name="practical9_title">Practical 9 – Location Based Services</string>
+
+    <!-- Practical 10 -->
+    <string name="practical10_title">Practical 10 – Device Camera</string>
+</resources>

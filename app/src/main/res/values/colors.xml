@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1565C0</color>
+    <color name="colorPrimaryDark">#0D47A1</color>
+    <color name="colorAccent">#FF6F00</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="dashboard_bg">#F0F4F8</color>
+    <color name="card_shadow">#BDBDBD</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+
+    <!-- Practical accent colors -->
+    <color name="p3_color">#E53935</color>
+    <color name="p4_color">#8E24AA</color>
+    <color name="p5_color">#00897B</color>
+    <color name="p6_color">#F57C00</color>
+    <color name="p7_color">#1E88E5</color>
+    <color name="p8_color">#D81B60</color>
+    <color name="p9_color">#43A047</color>
+    <color name="p10_color">#6D4C41</color>
+</resources>

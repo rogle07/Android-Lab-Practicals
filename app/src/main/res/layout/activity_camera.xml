@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dashboard_bg"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📷 Device Camera"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/p10_color"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/tv_camera_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap the button below to open the camera."
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:background="#E0E0E0"
+        android:contentDescription="Captured photo"
+        android:src="@android:drawable/ic_menu_camera"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_capture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📷 Open Camera &amp; Capture Photo"
+        android:backgroundTint="@color/p10_color"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btn_capture_another"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🔄 Capture Another Photo"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Made by Yogesh"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="8dp" />
+
+</LinearLayout>

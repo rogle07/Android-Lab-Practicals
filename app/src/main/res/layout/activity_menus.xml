@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dashboard_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📋 Menus and Navigation"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/p4_color"
+            android:padding="8dp" />
+
+        <!-- Options Menu hint -->
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Options Menu" android:textStyle="bold" android:textSize="16sp"
+                    android:textColor="@color/p4_color" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Tap the ⋮ menu icon (top-right) to see Options Menu with About, Home, Share options."
+                    android:textSize="13sp" android:textColor="@color/text_secondary" android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Context Menu -->
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Context Menu (Long Press below text)" android:textStyle="bold"
+                    android:textSize="16sp" android:textColor="@color/p4_color" />
+                <TextView
+                    android:id="@+id/tv_context_target"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="👇 Long press me to open the Context Menu!"
+                    android:textSize="15sp"
+                    android:padding="12dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#E8EAF6"
+                    android:textColor="@color/text_primary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Navigation Buttons -->
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Screen Navigation" android:textStyle="bold" android:textSize="16sp"
+                    android:textColor="@color/p4_color" />
+                <Button
+                    android:id="@+id/btn_go_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Go to Second Activity →"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/p4_color" />
+                <Button
+                    android:id="@+id/btn_go_third"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Go to Third Activity →"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/colorPrimary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Made by Yogesh"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="12dp" />
+
+    </LinearLayout>
+</ScrollView>
