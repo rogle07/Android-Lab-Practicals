@@ -1,0 +1,86 @@
+name: Build & Release APK
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build Debug APK & Publish Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout source code
+        uses: actions/checkout@v4
+
+      - name: ☕ Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: 🔧 Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: "8.1.1"
+
+      - name: 🏗️ Build Debug APK
+        run: gradle assembleDebug --no-daemon
+        working-directory: .
+
+      - name: 📋 Rename APK
+        run: |
+          mkdir -p artifacts
+          cp app/build/outputs/apk/debug/app-debug.apk artifacts/AndroidLabPracticals-Yogesh.apk
+
+      - name: 📦 Upload APK as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: APK-Debug
+          path: artifacts/AndroidLabPracticals-Yogesh.apk
+
+      - name: 🏷️ Delete existing release (if any)
+        run: gh release delete v1.0 --yes 2>/dev/null || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🚀 Create GitHub Release & Upload APK
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0
+          name: "Android Lab Practicals v1.0 – by Yogesh"
+          body: |
+            ## 📱 Android Lab Practicals 3–10
+            **Made by Yogesh**
+
+            ### ⬇️ Download & Install
+            1. Download `AndroidLabPracticals-Yogesh.apk` below
+            2. Enable **"Install from Unknown Sources"** on your phone
+            3. Open the APK → tap **Install**
+
+            ---
+
+            ### 📋 All 8 Practicals in One App
+
+            | Practical | Topic | Description |
+            |-----------|-------|-------------|
+            | **P3** | Simple Calculator | Addition, subtraction, multiplication, division with decimal support |
+            | **P4** | Menus & Navigation | Options Menu, Context Menu, navigation between 3 Activities |
+            | **P5** | Internal Storage | Save/Read/Update/Delete private text (`openFileOutput`) |
+            | **P6** | SQLite To-Do List | Full CRUD task manager with SQLite database |
+            | **P7** | Internet & Email | Connectivity check, open websites, compose email via Intent |
+            | **P8** | Graphics & Animations | Custom Canvas shapes + ValueAnimator (Rotate/Scale/Translate/Fade) |
+            | **P9** | Location Services | GPS coordinates, accuracy, open in Google Maps |
+            | **P10** | Device Camera | Capture and display full-resolution photos |
+
+            ---
+            *Built automatically by GitHub Actions · Made by Yogesh*
+          files: artifacts/AndroidLabPracticals-Yogesh.apk
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

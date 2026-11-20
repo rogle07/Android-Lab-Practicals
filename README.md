@@ -1,106 +1,99 @@
-# 📱 Android Lab Practicals
+# 📱 Android Lab Practicals — by Yogesh
 
-A complete Android application built in **Java** containing **8 Android Lab Practicals** (Practical 3 to Practical 10), demonstrating core Android development concepts.
-
-> **Made by Yogesh** | College Android Lab Assignment
+> One Android app containing **8 complete Lab Practicals** (Practical 3 to Practical 10), built in **Java**.
 
 ---
 
-## 📋 Practicals Included
+## ⬇️ Download APK
 
-| # | Practical | Description |
-|---|-----------|-------------|
-| 3 | Simple Calculator | Addition, subtraction, multiplication, division with decimal support and division-by-zero handling |
-| 4 | Menus and Navigation | Options Menu, Context Menu, and navigation between multiple activities |
-| 5 | Internal Storage | Save, read, update, and delete private text files that persist across restarts |
-| 6 | SQLite To-Do List | Full CRUD operations on a local SQLite database (Add, View, Update, Delete tasks) |
-| 7 | Internet and Email | Internet connectivity check, open websites in browser, compose and send emails |
-| 8 | Graphics and Animations | Draw shapes (Circle, Rectangle, Line, Triangle) with Rotation, Scaling, Translation, and Fade animations |
-| 9 | Location Based Services | Runtime location permissions, fetch current GPS coordinates, open in Google Maps |
-| 10 | Device Camera | Open camera, capture photos, and display them in the app |
+> **👉 [Go to GitHub Releases to Download the APK](../../releases/latest)**
+
+Every time code is pushed to this repository, a **GitHub Actions workflow** automatically builds a fresh `.apk` file and uploads it to the Releases page — so **everyone** can download it directly.
+
+---
+
+## 📋 Practical List & Direct Download
+
+| Practical | Title | Download | Description |
+|-----------|-------|----------|-------------|
+| **Practical 03** | Simple Calculator | [⬇️ Download APK](../../releases/latest/download/AndroidLabPracticals-Yogesh.apk) | Addition, subtraction, multiplication, division with decimal support and error checks |
+| **Practical 04** | Menus & Navigation | [⬇️ Download APK](../../releases/latest/download/AndroidLabPracticals-Yogesh.apk) | Options Menu, Context Menu, and screen switching via multiple Activities |
+| **Practical 05** | Internal Storage | [⬇️ Download APK](../../releases/latest/download/AndroidLabPracticals-Yogesh.apk) | File writing (`openFileOutput`) and reading (`openFileInput`) in private storage |
+| **Practical 06** | SQLite To-Do List | [⬇️ Download APK](../../releases/latest/download/AndroidLabPracticals-Yogesh.apk) | SQLite database CRUD (`INSERT`, `UPDATE`, `SELECT`, `DELETE`) |
+| **Practical 07** | Internet & Email | [⬇️ Download APK](../../releases/latest/download/AndroidLabPracticals-Yogesh.apk) | Connectivity check, open websites, and email via `ACTION_SENDTO` Intent |
+| **Practical 08** | Graphics & Animations | [⬇️ Download APK](../../releases/latest/download/AndroidLabPracticals-Yogesh.apk) | Custom Canvas drawing + `ValueAnimator` for Rotate, Scale, Translate, Fade |
+| **Practical 09** | Location Based Services | [⬇️ Download APK](../../releases/latest/download/AndroidLabPracticals-Yogesh.apk) | `FusedLocationProviderClient` with runtime location permission and Google Maps |
+| **Practical 10** | Device Camera | [⬇️ Download APK](../../releases/latest/download/AndroidLabPracticals-Yogesh.apk) | `ACTION_IMAGE_CAPTURE` Intent and thumbnail preview via `ActivityResult` |
+
+> *(All 8 practicals are bundled in one APK. Launch the app and tap any card to open that practical.)*
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Language:** Java
-- **UI:** XML Layouts
-- **Database:** SQLite (Android built-in)
-- **Build System:** Gradle
-- **IDE:** Android Studio
-- **Target SDK:** 34 (Android 14)
-- **Min SDK:** 24 (Android 7.0)
-- **Libraries:**
-  - AndroidX AppCompat
-  - Material Components
-  - ConstraintLayout
-  - CardView / RecyclerView
-  - Google Play Services Location
+| Technology | Purpose |
+|-----------|---------|
+| **Java** | Primary programming language |
+| **XML** | UI layouts |
+| **SQLite** | Local database (Practical 6) |
+| **Android SDK 34** | Target platform |
+| **Gradle** | Build system |
+| **GitHub Actions** | CI/CD — auto-build APK on every push |
+| **Material Components** | Modern UI |
+| **Google Play Services Location** | GPS (Practical 9) |
 
 ---
 
-## ⚙️ Setup Instructions
+## 🏗️ Repository Structure
 
-### Prerequisites
-- Android Studio (latest version recommended)
-- Android SDK 34
-- Java Development Kit (JDK 8+)
-
-### Steps
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/Android-Lab-Practicals.git
-   ```
-2. **Open in Android Studio:**
-   - File → Open → Select the `AndroidLabPracticals` folder
-
-3. **Sync Gradle:**
-   - Android Studio will prompt to sync. Click **Sync Now**.
-
-4. **Build the project:**
-   ```
-   Build → Make Project (Ctrl+F9)
-   ```
-
-5. **Run on device or emulator:**
-   - Connect your Android device (USB Debugging enabled) or start an emulator
-   - Click **Run** (Shift+F10)
+```
+AndroidLabPracticals/
+├── .github/
+│   └── workflows/
+│       └── build-apk.yml          # Automated CI/CD pipeline
+├── app/src/main/
+│   ├── java/com/yogesh/androidlabpracticals/
+│   │   ├── MainActivity.java       # Dashboard with 8 practical cards
+│   │   ├── practical3/             # Simple Calculator
+│   │   ├── practical4/             # Menus & Navigation (3 Activities)
+│   │   ├── practical5/             # Internal Storage
+│   │   ├── practical6/             # SQLite To-Do List
+│   │   ├── practical7/             # Internet & Email
+│   │   ├── practical8/             # Graphics & Animations
+│   │   ├── practical9/             # Location Services
+│   │   └── practical10/            # Device Camera
+│   ├── res/layout/                 # XML layouts for all screens
+│   └── AndroidManifest.xml
+├── build.gradle
+└── settings.gradle
+```
 
 ---
 
-## 📦 APK Installation
+## ⚙️ Build Locally (Android Studio)
 
-1. Download `app-debug.apk` from the [Releases](../../releases) page.
-2. On your Android phone, enable **Install from Unknown Sources** in Settings.
-3. Open the downloaded APK file and tap **Install**.
-4. Launch **Android Lab Practicals** from your app drawer.
+```bash
+git clone https://github.com/rogle07/Android-Lab-Practicals.git
+```
 
----
-
-## 📸 Screenshots
-
-> *Screenshots section — add screenshots after running the app.*
-
-| Dashboard | Calculator | To-Do List |
-|-----------|-----------|-----------|
-| *(Home screen with 8 practical cards)* | *(iOS-style calculator UI)* | *(Task list with SQLite)* |
+1. Open **Android Studio** → File → Open → select the cloned folder
+2. Wait for Gradle sync
+3. **Build → Build APK(s)**
+4. APK at: `app/build/outputs/apk/debug/app-debug.apk`
 
 ---
 
-## 📌 Permissions Required
+## 📲 Install on Your Android Phone
 
-- `INTERNET` – For internet connectivity check and opening URLs
-- `ACCESS_FINE_LOCATION` / `ACCESS_COARSE_LOCATION` – For GPS location
-- `CAMERA` – For capturing photos
-- `READ_EXTERNAL_STORAGE` / `WRITE_EXTERNAL_STORAGE` – For saving captured images
+1. Download `AndroidLabPracticals-Yogesh.apk` from [Releases](../../releases/latest)
+2. On your phone: **Settings → Security → Install Unknown Apps → Allow**
+3. Open the downloaded APK → **Install**
+4. Launch **"Android Lab Practicals"** from your app drawer
 
 ---
 
 ## 👨‍💻 Author
 
-**Yogesh**  
-Android Lab Practicals – College Project
-
----
+**Yogesh** — Android Lab Practicals College Assignment
 
 *Made by Yogesh*
