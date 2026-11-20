@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dashboard_bg">
@@ -10,94 +11,200 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
+        <!-- Title Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🌐 Internet and Email"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/p7_color"
-            android:padding="8dp" />
+            android:layout_marginBottom="14dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌐 Practical 07: Internet &amp; Email"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/p7_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check live network state via ConnectivityManager, open URLs via Intent, and dispatch email intents using ACTION_SENDTO."
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <!-- Connectivity Card -->
         <androidx.cardview.widget.CardView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="3dp">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:padding="16dp">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="Internet Connectivity" android:textStyle="bold"
-                    android:textSize="16sp" android:textColor="@color/p7_color" />
-                <TextView android:id="@+id/tv_conn_status"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="Checking..." android:textSize="15sp"
-                    android:padding="8dp" android:textColor="@color/text_primary" />
-                <Button android:id="@+id/btn_check_conn"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="Check Connectivity" android:backgroundTint="@color/p7_color" />
+            android:layout_marginBottom="14dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Network Connectivity Status"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_primary" />
+
+                <TextView
+                    android:id="@+id/tv_conn_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Checking..."
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="10dp"
+                    android:textColor="@color/text_primary" />
+
+                <Button
+                    android:id="@+id/btn_check_conn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🔄 Refresh Connectivity Status"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/p7_color" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Open URL Card -->
         <androidx.cardview.widget.CardView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="3dp">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:padding="16dp">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="Open Website" android:textStyle="bold"
-                    android:textSize="16sp" android:textColor="@color/p7_color" />
-                <EditText android:id="@+id/et_url"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. Open Website (Browser Intent)"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_primary" />
+
+                <EditText
+                    android:id="@+id/et_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="e.g. https://www.google.com"
-                    android:inputType="textUri" android:padding="8dp"
-                    android:background="@android:color/white" android:layout_marginVertical="8dp" />
-                <Button android:id="@+id/btn_open_url"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="Open in Browser" android:backgroundTint="@color/colorPrimary" />
+                    android:inputType="textUri"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:background="@drawable/bg_edit_text"
+                    android:textSize="15sp"
+                    android:layout_marginVertical="10dp" />
+
+                <Button
+                    android:id="@+id/btn_open_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🚀 Open Website in Browser"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/colorPrimary" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Email Card -->
         <androidx.cardview.widget.CardView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="3dp">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:padding="16dp">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="Compose Email" android:textStyle="bold"
-                    android:textSize="16sp" android:textColor="@color/p7_color" />
-                <EditText android:id="@+id/et_email_to"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="To: recipient@example.com"
-                    android:inputType="textEmailAddress" android:padding="8dp"
-                    android:background="@android:color/white" android:layout_marginTop="8dp" />
-                <EditText android:id="@+id/et_email_subject"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Subject"
-                    android:padding="8dp" android:background="@android:color/white"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Compose &amp; Send Email (Intent)"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_primary" />
+
+                <EditText
+                    android:id="@+id/et_email_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Recipient (e.g. student@college.edu)"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:background="@drawable/bg_edit_text"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/et_email_subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Subject: Android Lab Submission"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:background="@drawable/bg_edit_text"
+                    android:textSize="15sp"
                     android:layout_marginTop="8dp" />
-                <EditText android:id="@+id/et_email_body"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="Message body..."
-                    android:minLines="3" android:gravity="top"
-                    android:padding="8dp" android:background="@android:color/white"
-                    android:layout_marginTop="8dp" android:layout_marginBottom="8dp" />
-                <Button android:id="@+id/btn_send_email"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="Send Email" android:backgroundTint="@color/p7_color" />
+
+                <EditText
+                    android:id="@+id/et_email_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Message content..."
+                    android:minLines="3"
+                    android:gravity="top"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:background="@drawable/bg_edit_text"
+                    android:textSize="15sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/btn_send_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✉️ Send Email via Client"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/p7_color" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -106,10 +213,10 @@
             android:layout_height="wrap_content"
             android:text="Made by Yogesh"
             android:textColor="@color/colorPrimary"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:padding="12dp" />
+            android:padding="16dp" />
 
     </LinearLayout>
 </ScrollView>

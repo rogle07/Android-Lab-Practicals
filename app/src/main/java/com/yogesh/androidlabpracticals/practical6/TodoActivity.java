@@ -59,8 +59,10 @@ public class TodoActivity extends AppCompatActivity {
         if (tasks.isEmpty()) {
             TextView empty = new TextView(this);
             empty.setText("No tasks yet. Add one above!");
-            empty.setPadding(16, 32, 16, 16);
-            empty.setTextSize(16f);
+            empty.setTextColor(androidx.core.content.ContextCompat.getColor(this, R.color.text_secondary));
+            empty.setPadding(24, 32, 24, 24);
+            empty.setTextSize(15f);
+            empty.setGravity(android.view.Gravity.CENTER);
             taskContainer.addView(empty);
             return;
         }
@@ -97,9 +99,24 @@ public class TodoActivity extends AppCompatActivity {
     private void showEditDialog(TodoItem item) {
         EditText input = new EditText(this);
         input.setText(item.task);
+        input.setTextColor(androidx.core.content.ContextCompat.getColor(this, R.color.text_primary));
+        input.setHintTextColor(androidx.core.content.ContextCompat.getColor(this, R.color.text_hint));
+        input.setBackgroundResource(R.drawable.bg_edit_text);
+        
+        android.widget.FrameLayout container = new android.widget.FrameLayout(this);
+        android.widget.FrameLayout.LayoutParams params = new android.widget.FrameLayout.LayoutParams(
+                android.view.ViewGroup.LayoutParams.MATCH_PARENT, 
+                android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.leftMargin = 48;
+        params.rightMargin = 48;
+        params.topMargin = 24;
+        params.bottomMargin = 16;
+        input.setLayoutParams(params);
+        container.addView(input);
+
         new AlertDialog.Builder(this)
                 .setTitle("Edit Task")
-                .setView(input)
+                .setView(container)
                 .setPositiveButton("Update", (d, w) -> {
                     String newTask = input.getText().toString().trim();
                     if (!newTask.isEmpty()) {

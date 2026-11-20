@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dashboard_bg">
@@ -10,49 +11,100 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="📍 Location Based Services"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/p9_color"
-            android:padding="8dp" />
-
-        <!-- Status Card -->
+        <!-- Title Card -->
         <androidx.cardview.widget.CardView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="3dp">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:padding="16dp">
+            android:layout_marginBottom="14dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg">
 
-                <TextView android:id="@+id/tv_location_status"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="📡 Press button to get your location"
-                    android:textSize="15sp" android:textColor="@color/text_primary"
-                    android:padding="8dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <TextView android:id="@+id/tv_latitude"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="Latitude:   –"
-                    android:textSize="16sp" android:textColor="@color/p9_color"
-                    android:textStyle="bold" android:padding="4dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Practical 09: Location Services"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/p9_color" />
 
-                <TextView android:id="@+id/tv_longitude"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="Longitude: –"
-                    android:textSize="16sp" android:textColor="@color/p9_color"
-                    android:textStyle="bold" android:padding="4dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Requests runtime location permissions, fetches real-time GPS coordinates using FusedLocationProviderClient, and launches Google Maps."
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-                <TextView android:id="@+id/tv_accuracy"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="Accuracy:  –"
-                    android:textSize="14sp" android:textColor="@color/text_secondary"
-                    android:padding="4dp" />
+        <!-- Coordinates Status Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/card_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_location_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📡 Tap button below to fetch current GPS location"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_saved_data"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/tv_latitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Latitude:   –"
+                        android:textSize="16sp"
+                        android:textColor="@color/p9_color"
+                        android:textStyle="bold"
+                        android:padding="4dp" />
+
+                    <TextView
+                        android:id="@+id/tv_longitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Longitude: –"
+                        android:textSize="16sp"
+                        android:textColor="@color/p9_color"
+                        android:textStyle="bold"
+                        android:padding="4dp" />
+
+                    <TextView
+                        android:id="@+id/tv_accuracy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Accuracy:  –"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:padding="4dp" />
+                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -60,33 +112,39 @@
             android:id="@+id/btn_get_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="📡 Get My Location"
+            android:text="🛰️ Get GPS Coordinates"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:backgroundTint="@color/p9_color"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="10dp" />
 
         <Button
             android:id="@+id/btn_open_maps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🗺️ Open in Google Maps"
+            android:text="🗺️ View Location in Google Maps"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:backgroundTint="@color/colorPrimary"
             android:layout_marginBottom="16dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Note: Enable GPS on your device for accurate results."
-            android:textSize="12sp"
+            android:text="Note: Please make sure Location (GPS) is turned ON on your phone."
+            android:textSize="13sp"
             android:textColor="@color/text_secondary"
             android:gravity="center"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="12dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Made by Yogesh"
             android:textColor="@color/colorPrimary"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:gravity="center"
             android:padding="12dp" />

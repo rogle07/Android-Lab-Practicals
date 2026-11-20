@@ -42,7 +42,7 @@ public class DrawingView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawColor(Color.parseColor("#F0F4F8"));
+        canvas.drawColor(Color.parseColor("#F4F6F9"));
 
         int w = getWidth();
         int h = getHeight();
